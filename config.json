@@ -76,6 +76,15 @@
       }
     },
     {
+      "type": "text",
+      "action": "add",
+      "args": {
+        "name": "mylist",
+        "uri": "./custom/custom.txt",
+        "onlyIPType": "ipv4"
+      }
+    },
+    {
       "type": "private",
       "action": "add"
     }
