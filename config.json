@@ -71,8 +71,9 @@
     {
       "type": "text",
       "action": "add",
+      "name": "customip",
       "args": {
-        "inputDir": "./data"
+        "uri": "./data"
       }
     },
     {
