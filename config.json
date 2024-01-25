@@ -22,7 +22,7 @@
       "action": "add",
       "args": {
         "name": "cn",
-        "uri": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/17mon/china_ip_list/master/china_ip_list.txt",
+        "uri": "https://raw.githubusercontent.com/17mon/china_ip_list/master/china_ip_list.txt",
         "onlyIPType": "ipv4"
       }
     },
@@ -31,7 +31,7 @@
       "action": "add",
       "args": {
         "name": "cn",
-        "uri": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/gaoyifan/china-operator-ip/ip-lists/china.txt",
+        "uri": "https://raw.githubusercontent.com/gaoyifan/china-operator-ip/ip-lists/china.txt",
         "onlyIPType": "ipv4"
       }
     },
@@ -40,7 +40,7 @@
       "action": "add",
       "args": {
         "name": "cn",
-        "uri": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/gaoyifan/china-operator-ip/ip-lists/china6.txt",
+        "uri": "https://raw.githubusercontent.com/gaoyifan/china-operator-ip/ip-lists/china6.txt",
         "onlyIPType": "ipv6"
       }
     },
@@ -71,9 +71,8 @@
     {
       "type": "text",
       "action": "add",
-      "name": "customip",
       "args": {
-        "uri": "./data/custom.txt"
+        "inputDir": "./data"
       }
     },
     {
@@ -83,6 +82,46 @@
   ],
   "output": [
     {
+      "type": "v2rayGeoIPDat",
+      "action": "output",
+      "args": {
+        "outputName": "geoip.dat"
+      }
+    },
+    {
+      "type": "v2rayGeoIPDat",
+      "action": "output",
+      "args": {
+        "outputName": "geoip-only-cn-private.dat",
+        "wantedList": ["cn", "private"]
+      }
+    },
+    {
+      "type": "v2rayGeoIPDat",
+      "action": "output",
+      "args": {
+        "outputName": "geoip-asn.dat",
+        "wantedList": [
+          "cloudflare",
+          "cloudfront",
+          "facebook",
+          "fastly",
+          "google",
+          "netflix",
+          "telegram",
+          "twitter"
+        ]
+      }
+    },
+    {
+      "type": "v2rayGeoIPDat",
+      "action": "output",
+      "args": {
+        "oneFilePerList": true,
+        "wantedList": ["cn", "private"]
+      }
+    },
+    {
       "type": "maxmindMMDB",
       "action": "output",
       "args": {
@@ -90,6 +129,31 @@
         "overwriteList": [
           "cn",
           "private",
+          "cloudflare",
+          "cloudfront",
+          "facebook",
+          "fastly",
+          "google",
+          "netflix",
+          "telegram",
+          "twitter"
+        ]
+      }
+    },
+    {
+      "type": "maxmindMMDB",
+      "action": "output",
+      "args": {
+        "outputName": "Country-only-cn-private.mmdb",
+        "wantedList": ["cn", "private"]
+      }
+    },
+    {
+      "type": "maxmindMMDB",
+      "action": "output",
+      "args": {
+        "outputName": "Country-asn.mmdb",
+        "wantedList": [
           "cloudflare",
           "cloudfront",
           "facebook",
