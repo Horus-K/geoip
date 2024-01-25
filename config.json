@@ -82,14 +82,6 @@
   ],
   "output": [
     {
-      "type": "v2rayGeoIPDat",
-      "action": "output",
-      "args": {
-        "oneFilePerList": true,
-        "wantedList": ["cn", "private"]
-      }
-    },
-    {
       "type": "maxmindMMDB",
       "action": "output",
       "args": {
