@@ -73,7 +73,7 @@
       "action": "add",
       "name": "customip",
       "args": {
-        "uri": "./data"
+        "uri": "./data/custom.txt"
       }
     },
     {
