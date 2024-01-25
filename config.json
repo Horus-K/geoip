@@ -85,13 +85,6 @@
       "type": "v2rayGeoIPDat",
       "action": "output",
       "args": {
-        "outputName": "geoip.dat"
-      }
-    },
-    {
-      "type": "v2rayGeoIPDat",
-      "action": "output",
-      "args": {
         "outputName": "geoip-only-cn-private.dat",
         "wantedList": ["cn", "private"]
       }
